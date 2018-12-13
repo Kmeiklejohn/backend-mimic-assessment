@@ -50,8 +50,8 @@ import sys
 def mimic_dict(filename):
     """Returns mimic dict mapping each word to list of words which follow it."""
     with open(filename, "r") as file:
-        text = file.read().split
-    return map(lambda x:x, textspl)
+        text = file.read().split()
+    return map(lambda x:x, text)
    
 
 

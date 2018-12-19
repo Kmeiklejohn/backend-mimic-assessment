@@ -52,12 +52,14 @@ def mimic_dict(filename):
     with open(filename, "r") as file:
         words = file.read().split()
         mimic_dict = {}
+    prev_word = ''
     for word in words:
-        prev_word = ''
         if not prev_word in mimic_dict:
             mimic_dict[prev_word] = [word]
         else:
-            mimic_dict[prev_word] = mimic_dict.get(prev_word, []) + [word]
+            mimic_dict[prev_word].append(word)
+            prev_word = word
+    print mimic_dict
     return mimic_dict
 
    
